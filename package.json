@@ -1,0 +1,58 @@
+{
+  "name": "td-v2-desktop",
+  "version": "0.0.1",
+  "description": "Desktop version of Threat Dragon",
+  "main": "./dist/main/index.js",
+  "scripts": {
+    "dev": "node .electron-nuxt/dev.js",
+    "build": "node .electron-nuxt/build.js",
+    "test:unit": "cross-env NODE_ENV=test TEST_TYPE=unit ava",
+    "test:e2e": "cross-env NODE_ENV=test TEST_TYPE=e2e ava",
+    "test": "yarn run test:unit && yarn run test:e2e",
+    "lint": "node_modules/.bin/eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter ./src",
+    "lint:fix": "yarn run lint -- --fix",
+    "preinstall": "node .electron-nuxt/check-engines.js",
+    "postinstall": "electron-builder install-app-deps & yarn run lint:fix"
+  },
+  "keywords": [],
+  "author": "Jon Gadsden <jon.gadsden@owasp.org>",
+  "license": "MIT",
+  "homepage": "https://github.com/michalzaq12/electron-nuxt/blob/master/README.md",
+  "engines" : {
+    "node" : ">=12.13.0"
+  },
+  "resolutions": {
+    "@types/node": "12.12.6"
+  },
+  "devDependencies": {
+    "@xpda-dev/core": "^0.1.6",
+    "@xpda-dev/electron-launcher": "^0.3.0",
+    "@xpda-dev/electron-builder": "^0.2.1",
+    "@xpda-dev/webpack-step": "^0.1.2",
+    "deepmerge": "4.2.2",
+    "ava": "2.4.0",
+    "browser-env": "3.3.0",
+    "buefy": "0.9.4",
+    "cross-env": "7.0.3",
+    "electron": "12.0.2",
+    "electron-builder": "22.10.5",
+    "eslint": "5.16.0",
+    "babel-eslint": "10.1.0",
+    "eslint-friendly-formatter": "4.0.1",
+    "eslint-loader": "4.0.2",
+    "@nuxtjs/eslint-config": "1.1.2",
+    
+    "native-ext-loader": "2.3.0",
+    "nuxt": "2.15.3",
+    "node-sass": "4.14.1",
+    "sass-loader": "10.0.2",
+    "electron-devtools-installer": "3.1.1",
+    "@vue/test-utils": "1.1.0",
+    "require-extension-hooks": "0.3.3",
+    "require-extension-hooks-babel": "1.0.0",
+    "require-extension-hooks-vue": "0.4.2",
+    "babel-plugin-webpack-alias-7": "0.1.1",
+    "webpack": "4.44.2",
+    "webpack-node-externals": "2.5.2"
+  }
+}
