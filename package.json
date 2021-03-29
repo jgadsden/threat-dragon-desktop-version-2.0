@@ -1,23 +1,30 @@
 {
-  "name": "td-v2-desktop",
-  "version": "0.0.1",
-  "description": "Desktop version of Threat Dragon",
-  "main": "./dist/main/index.js",
+  "name": "owasp-threat-dragon-desktop",
+  "version": "2.0.0",
   "scripts": {
     "dev": "node .electron-nuxt/dev.js",
     "build": "node .electron-nuxt/build.js",
     "test:unit": "cross-env NODE_ENV=test TEST_TYPE=unit ava",
     "test:e2e": "cross-env NODE_ENV=test TEST_TYPE=e2e ava",
-    "test": "yarn run test:unit && yarn run test:e2e",
+    "test": "npm run-script test:unit && npm run-script test:e2e",
     "lint": "node_modules/.bin/eslint --ext .js,.vue -f ./node_modules/eslint-friendly-formatter ./src",
-    "lint:fix": "yarn run lint -- --fix",
+    "lint:fix": "npm run-script lint -- --fix",
     "preinstall": "node .electron-nuxt/check-engines.js",
-    "postinstall": "electron-builder install-app-deps & yarn run lint:fix"
+    "postinstall": "electron-builder install-app-deps & npm run-script lint:fix"
   },
-  "keywords": [],
-  "author": "Jon Gadsden <jon.gadsden@owasp.org>",
-  "license": "MIT",
-  "homepage": "https://github.com/michalzaq12/electron-nuxt/blob/master/README.md",
+  "description": "Desktop version of Threat Dragon",
+  "author": {
+    "name": "Jon Gadsden",
+    "email": "jon.gadsden@owasp.org"
+  },
+  "main": "./dist/main/index.js",
+  "keywords": [ "Threat Dragon", "Threat Modeling", "STRIDE", "LINDDUN" ],
+  "license": "Apache-2.0",
+  "homepage": "https://owasp.org/www-project-threat-dragon/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/owasp/threat-dragon-desktop.git"
+  },
   "engines" : {
     "node" : ">=12.13.0"
   },
